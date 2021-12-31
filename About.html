@@ -1,0 +1,425 @@
+<!--Name: About.html
+    Purpose: Presenting an about page with information to the user for team contact us information, a contact us button that will link to a form, and an FAQ section with expandable tabs
+    Version and Date: V1, 5/30/2021
+    Author(s): Danielle DeLia
+    Dependencies: No dependencies-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="restaurants.css" rel="stylesheet" type="text/css" />
+<title>MoneySaver | The simplest budgeting tool</title>
+<link rel="shortcut icon" type="image/jpg" href="images/MoneySaversLogo.ico"/>
+
+<!-- Style information below -->
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  animation: fadeIn ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+  0% { 
+      opacity: 0; 
+    } 
+  100% { 
+      opacity: 1; 
+  }
+}
+
+nav {
+  padding: 25px;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #FFFFFF;
+}
+
+
+.topnav a {
+  float: right;
+  display: block;
+  color: #000000;
+  text-align: right;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  padding: 16px 5%;
+  position: static;
+  margin-right:15px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #dffcd3;
+  border-radius: 12px;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #44C40C;
+  border-radius: 12px;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 1175px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1175px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+.logo {
+  position: absolute;
+  left: 15px;
+  top: 25px;
+}
+
+.background {
+  background-image: url("images/MoneySaversTestBG.png");
+  height: 55%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.heading-text {
+  float: left;
+  text-align: left;
+  font-family: Product-Sans;
+  font-weight: bold;
+  font-size: 5vh;
+  padding-left: 5%;
+  padding-top: 1%;
+  color: white;
+}
+
+@media(max-width: 1000px){
+  .background {
+  background-image: url("images/MoneySaversMobile.png");
+   }
+}
+
+button {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  position: relative;
+  background-color: #000000;
+  float: left;
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 25px;
+}
+
+/* */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 25%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  color: black;
+  background-color: #C1E1C1;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 50px;
+  float: center;
+}
+
+.button:hover {
+  background-color: #90ee90;
+}
+
+banner {
+  background-color: rgb(0,230,0);
+  background-size: 100px 80px;
+}
+
+h1 {
+  color: rgb(0, 0, 0);
+  text-align: left;
+}
+
+h2 {
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-size: 50px;
+}
+
+h3 {
+  color: black;
+  font-size: 40px;
+  text-align: center;
+}
+
+h4 {
+  color: black;
+  font-size: 20px;
+  text-align: center;
+}
+
+p6 {
+  color: black;
+  font-size: 320px;
+}
+
+.title {
+  color: grey;
+  text-align: center;
+}
+
+.collapse {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .collapse:hover {
+  background-color: #C1E1C1; 
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
+
+p2 {
+  text-align: left;
+}
+</style>
+</head>
+
+
+<body>
+
+<!-- Navigation Bar below with links to each tab -->
+<nav>
+<div class="logo">
+<a href="index.html"> <img src="images/MoneySaversLogoSmall.png"></a>
+</div>
+<div class="topnav" id="navBar">
+  <a href="https://moneysaversapp.bubbleapps.io/version-test/" target="">Sign in</a>
+  <a class="active" href="About.html">About</a>
+  <a href="Budgeting.html">Budgeting</a>
+  <a href="Discounts.html">Discounts</a>
+  <a href="index.html">Home</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+<!-- Script for navigation bar -->
+<script>
+function myFunction() {
+  var x = document.getElementById("navBar");
+  if (x.className == "topnav") {
+    x.className += " responsive";
+  } 
+  else {
+    x.className = "topnav";
+  }
+}
+</script>
+</div>
+</nav>
+
+
+<!-- Text to portray a line in the website -->
+<h1>_______________________________________________________________________________________________________________________________________________________________________________________________</h1>
+
+<!-- Text to display the information of why our team decided on a budgeting website -->
+<h2>The Challenge:</h2>
+<p>Millions around the world struggle with budgeting and saving their money. In some situations, this leads to poverty or the unfortunate situation of debt. To combat this, we have created a “money-saving” website. Our site helps users save money, keep track of their personal finances, and puts it all in an easy to see format.</p>
+<br>
+
+<!-- 1 row and 4 columns elements to fit the name of team member, role on team, email and image of team member -->
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="images/danielle.png" alt="Danielle" style="width:100%">
+      <div class="container">
+        <h4>Danielle DeLia</h4>
+        <p class="title">Designer/Developer</p>
+        <p>Worked in Figma, HTML, CSS</p>
+        <p>dpd74@drexel.edu</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="images/ryu.png" alt="Ryu" style="width:100%">
+      <div class="container">
+        <h4>Ryu Morgan</h4>
+        <p class="title">Developer</p>
+        <p>Worked in HTML, CSS, javascript</p>
+        <p>rkm69@drexel.edu</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <img src="images/joe.png" alt="Joe" style="width:100%">
+      <div class="container">
+        <h4>Joe Selvanandan</h4>
+        <p class="title">Developer</p>
+        <p>Worked in HTML, CSS, javascript</p>
+        <p>js4954@drexel.edu</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="images/paul.png" alt="Paul" style="width:100%">
+      <div class="container">
+        <h4>Paul Ackah</h4>
+        <p class="title">Developer</p>
+        <p>Worked in HTML, CSS and php</p>
+        <p>pda32@drexel.edu</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Contact us button that links to contact.html where a form is -->
+<a href="contact.html"><h2><button class="button">Contact Us</button></h2></a>
+
+<!--FAQ info-->
+<!-- Text to portray a line in the website -->
+<h1>_______________________________________________________________________________________________________________________________________________________________________________________________</h1>
+<!-- FAQ title -->
+<h2>FAQs</h2>
+<!-- collapsible panels for FAQ section; contain a question and expandable answer  -->
+<button class="collapse">What are the best budgeting tips?</button>
+<div class="panel">
+  <p2> * Make a schedule that you will stick to <br>
+       * Quit comparisons <br>
+       * Recognize that each month may look different <br>
+       * Set goals <br>
+       * Only budget money that you have <br>
+      
+  </p2>
+</div>
+
+<button class="collapse">What can the discounts tab provide for me?</button>
+<div class="panel">
+  <p2>The discounts tab is intended as a place for users to find a variety of websites and programs offering discounts for many different categories. The goal of this tab is to guide the user to different programs so that they can find the one that works best for them and ultimately helps save them money.</p2>
+</div>
+
+<button class="collapse">Does budgeting through this site cost anything?</button>
+<div class="panel">
+  <p2>No. This is a free site made for any user to help keep track of their finances individually. Although this site is for users to budget independently, you can find a contact us button on this page for any questions you may have.</p2>
+</div>
+
+<button class="collapse">Why should I budget?</button>
+<div class="panel">
+  <p2>Budgeting gives you control over your money. It puts you on a path to achieve your financial goals, track your money and ultimately help you save money.</p2>
+</div>
+
+<button class="collapse">Where can I find image credits for this site?</button>
+<div class="panel">
+  <p2><div>Icons made by <a href="https://www.flaticon.com/authors/wanicon" title="wanicon">wanicon</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+<div>Icons made by <a href="https://www.flaticon.com/authors/vectors-market" title="Vectors Market">Vectors Market</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+<div>Icons made by <a href="https://www.flaticon.com/authors/flat-icons" title="Flat Icons">Flat Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+<div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div></p2>
+</div>
+
+<!-- Script for collapsible panels -->
+<script>
+var acc = document.getElementsByClassName("collapse");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
+</body>
+</html>

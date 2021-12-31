@@ -1,0 +1,19 @@
+/*Name: restaurants.css
+    Purpose: Provide style information for restaurants.html
+    Version and Date: V1, 5/30/2021
+    Author(s): Danielle DeLia
+    Dependencies: No dependencies*/
+
+h1 {
+  text-align: center;
+}
+
+p{
+  text-align: center;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

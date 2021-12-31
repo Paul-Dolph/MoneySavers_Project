@@ -1,0 +1,254 @@
+<!--Name: contact.html
+    Purpose: Presenting a contact us page with a form for the user to input and submit questions or concerns
+    Version and Date: V1, 5/30/2021
+    Author(s): Danielle DeLia and Paul Ackah
+    Dependencies: No dependencies-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Style information -->
+<style>
+@font-face {
+    font-family: "Product-Sans";
+    src: url("Fonts/Product-Sans.ttf");
+}
+
+:root {
+  --primary: lightgreen;
+  --secondary: darkgreen;
+  --dark: black;
+  --light: white;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  animation: fadeIn ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+  0% { 
+      opacity: 0; 
+    } 
+  100% { 
+      opacity: 1; 
+  }
+}
+
+nav {
+  padding: 25px;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #FFFFFF;
+}
+
+.topnav a {
+  float: right;
+  display: block;
+  color: #000000;
+  text-align: right;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  padding: 16px 5%;
+  position: static;
+  margin-right:15px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #dffcd3;
+  border-radius: 12px;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #44C40C;
+  border-radius: 12px;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 1175px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1175px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+.logo {
+  position: absolute;
+  left: 15px;
+  top: 25px;
+}
+
+.background {
+  background-image: url("images/MoneySaversTestBG.png");
+  height: 55%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.heading-text {
+  float: left;
+  text-align: left;
+  font-family: Product-Sans;
+  font-weight: bold;
+  font-size: 5vh;
+  padding-left: 5%;
+  padding-top: 1%;
+  color: white;
+}
+
+@media(max-width: 1000px){
+  .background {
+  background-image: url("images/MoneySaversMobile.png");
+   }
+}
+
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #59AA84;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #1E5B59;
+}
+
+.container {
+  border-radius: 15px;
+  background-color: #C1CFB9;
+  padding: 20px;
+}
+
+h3 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+  font-weight: lighter;
+  font-size: 15px;
+}
+</style>
+</head>
+
+<body>
+<!-- Navigation Bar below with links to each tab -->
+<nav>
+<div class="logo">
+<a href="index.html"> <img src="images/MoneySaversLogoSmall.png"></a>
+</div>
+<div class="topnav" id="navBar">
+  <a href="https://moneysaversapp.bubbleapps.io/version-test/" target="">Sign in</a>
+  <a class="active" href="About.html">About</a>
+  <a href="Budgeting.html">Budgeting</a>
+  <a href="Discounts.html">Discounts</a>
+  <a href="index.html">Home</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+<!-- Script for navigation bar -->
+<script>
+function myFunction() {
+  var x = document.getElementById("navBar");
+  if (x.className == "topnav") {
+    x.className += " responsive";
+  } 
+  else {
+    x.className = "topnav";
+  }
+}
+</script>
+</div>
+</nav>
+
+<!-- Head title for contact us form -->
+<h3>Get in Touch</h3>
+<h2>Fill out the following information if you have any questions or concerns. We'd love to hear from you.</h2>
+
+<!--  Container with different sections of the form -->
+<div class="container">
+  <form
+  action="https://formspree.io/f/xdoezapo"
+  method="POST"
+>
+  <!-- 1st section of the form with label -->
+  <label>
+    Your email:
+    </label>
+    <input type="text"  name="Email from">
+  
+  <!-- 2nd section of the form with label -->
+  <label>
+    Name*
+    </label>
+    <input type="text" id="fname" name="First Name" placeholder="Your name..">
+
+  <!-- 3rd section of the form with label -->
+  <label>Reason*</label>
+    <select id="reason" name="Reason">
+      <option value="budgeting help">Budgeting Help</option>
+      <option value="site navigation">Site Navigation</option>
+      <option value="discount">Discount Questions</option>
+      <option value="other">Other</option>
+    </select>
+
+  <!-- 4th section of the form with label -->
+  <label>
+    Your message:
+    <textarea name="Message"></textarea>
+  </label>
+
+  <!-- Submit button -->
+  <button type="submit">Send</button>
+</form>
+</div>
+</body>
+</html>

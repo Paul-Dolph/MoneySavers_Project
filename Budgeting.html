@@ -1,0 +1,319 @@
+<!--
+File name: Budgeting.html
+Purpose: Allows users to calculate their budgets by adding their income as well as their expenses to calculate an overall total
+Version/date: V1, 05/28/21
+Authors:Ryu
+Dependencies:font-awesome icons -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- main css -->
+    <link rel="stylesheet" href="/Budgeting.css" />
+    <link rel="shortcut icon" type="image/jpg" 
+    <!-- font awesome -->
+    <link rel="stylesheet" href="css/all.css" />
+    <title>budget app</title>
+<!-- Style elements for navigation bar -->
+<style>
+        body, html {
+    height: 100%;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    animation: fadeIn ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+  0% { 
+      opacity: 0; 
+    } 
+  100% { 
+      opacity: 1; 
+  }
+}
+
+nav {
+  padding: 25px;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #FFFFFF;
+}
+
+
+.topnav a {
+  float: right;
+  display: block;
+  color: none;
+  text-align: right;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  padding: 16px 5%;
+  position: static;
+  margin-right:15px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #dffcd3;
+  border-radius: 12px;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #44C40C;
+  border-radius: 12px;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 1175px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1175px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+.logo {
+  position: absolute;
+  left: 15px;
+  top: 25px;
+}
+
+.background {
+  background-image: url("images/MoneySaversTestBG.png");
+  height: 55%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  c
+}
+
+.heading-text {
+  float: left;
+  text-align: left;
+  font-family: Product-Sans;
+  font-weight: bold;
+  font-size: 5vh;
+  padding-left: 5%;
+  padding-top: 1%;
+  color: white;
+}
+
+@media(max-width: 1000px){
+  .background {
+  background-image: url("images/MoneySaversMobile.png");
+   }
+}
+
+button {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  position: relative;
+  background-color: #000000;
+  float: left;
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 25px;
+}
+  </style>
+<!-- Navigation Bar below with links to each tab -->
+<nav>
+<div class="logo">
+<a href="index.html"> <img src="images/MoneySaversLogoSmall.png"></a>
+</div>
+<div class="topnav" id="navBar">
+  <a href="https://moneysaversapp.bubbleapps.io/version-test/" target="">Sign in</a>
+  <a href="About.html">About</a>
+  <a class="active" href="Budgeting.html">Budgeting</a>
+  <a href="Discounts.html">Discounts</a>
+  <a href="index.html">Home</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+<script>
+function myFunction() {
+  var x = document.getElementById("navBar");
+  if (x.className == "topnav") {
+    x.className += " responsive";
+  } 
+  else {
+    x.className = "topnav";
+  }
+}
+</script>
+</div>
+</nav>
+</head>
+
+
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-11 mx-auto pt-3">
+          <!-- title -->
+          <h3 class="text-uppercase mb-4">budget app</h3>
+          <div class="row">
+            <div class="col-md-5 my-3">
+              <!-- budget feedback -->
+              <div class="budget-feedback alert alert-danger text-capitalize">
+                budget feedback
+              </div>
+              <!-- budget form -->
+              <form id="budget-form" class="budget-form">
+                <h5 class="text-capitalize">please enter your budget</h5>
+                <div class="form-group">
+                  <input
+                    type="number"
+                    class="form-control budget-input"
+                    id="budget-input"
+                  />
+                </div>
+                <!-- submit button -->
+                <button
+                  type="submit"
+                  class="btn text-capitalize budget-submit"
+                  id="budget-submit"
+                >
+                  calculate
+                </button>
+              </form>
+            </div>
+            <div class="col-md-7">
+              <!-- app info -->
+              <div class="title_lables">
+                <div class="budget_label">
+                  <h6 class="text-uppercase info-title">budget</h6>
+                  <span class="budget-icon"
+                    ><i class="fas fa-money-bill-alt"></i
+                  ></span>
+                  <h4 class="text-uppercase mt-2 budget" id="budget">
+                    <span>$ </span><span id="budget-amount">0</span>
+                  </h4>
+                </div>
+                <div class="expense_label">
+                  <h6 class="text-uppercase info-title">expenses</h6>
+                  <span class="expense-icon"
+                    ><i class="far fa-credit-card"></i
+                  ></span>
+                  <h4 class="text-uppercase mt-2 expense" id="expense">
+                    <span>$ </span><span id="expense-amount">0</span>
+                  </h4>
+                </div>
+                <div class="balance_label">
+                  <h6 class="text-uppercase info-title">balance</h6>
+                  <span class="balance-icon"
+                    ><i class="fas fa-dollar-sign"></i
+                  ></span>
+                  <h4 class="text-uppercase mt-2 balance" id="balance">
+                    <span>$ </span><span id="balance-amount">0</span>
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-5 my-3">
+              <!-- expense feedback -->
+              <div class="expense-feedback alert alert-danger text-capitalize">
+                expense feedback
+              </div>
+              <!-- expense form -->
+              <form id="expense-form" class="expense-form">
+                <h5 class="text-capitalize">please enter your expense</h5>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control expense-input"
+                    id="expense-input"
+                  />
+                </div>
+                <h5 class="text-capitalize">please enter expense amount</h5>
+                <div class="form-group">
+                  <input
+                    type="number"
+                    class="form-control expense-input"
+                    id="amount-input"
+                  />
+                </div>
+                <!-- submit button -->
+                <button
+                  type="submit"
+                  class="btn text-capitalize expense-submit"
+                  id="expense-submit"
+                >
+                  add expense
+                </button>
+              </form>
+            </div>
+            <div class="col-md-7 my-3">
+              <!-- expense list -->
+              <div class="expense-list" id="expense-list">
+                <div
+                  class="expense-list__info d-flex justify-content-between text-capitalize"
+                >
+                  <h5 class="list-item">expense title</h5>
+                  <h5 class="list-item">expense value</h5>
+                  <h5 class="list-item"></h5>
+                </div>
+                <!-- single expense -->
+
+                <!-- <div class="expense">
+        <div class="expense-item d-flex justify-content-between align-items-baseline">
+         <h6 class="expense-title mb-0 text-uppercase list-item">- title</h6>
+         <h5 class="expense-amount mb-0 list-item">amount</h5>
+         <div class="expense-icons list-item">
+          <a href="#" class="edit-icon mx-2" data-id="${expense.id}">
+           <i class="fas fa-edit"></i>
+          </a>
+          <a href="#" class="delete-icon" data-id="${expense.id}">
+           <i class="fas fa-trash"></i>
+          </a>
+         </div>
+        </div>
+       </div> -->
+
+                <!-- end of single expense -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- script js -->
+    <script src="NewBudget.js"></script>
+  </body>
+</html>

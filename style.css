@@ -1,0 +1,409 @@
+/*
+File name: style.css
+Purpose: CSS file defining how most of the sites elements behave; many parts often reused for other CSS files on site
+Version/date: V1, 04/15/21
+Authors: Joe, Paul, and Ryu
+Dependencies: Product sans typeface */
+
+@font-face {
+    font-family: "Product-Sans";
+    src: url("Fonts/Product-Sans.ttf");
+}
+
+/* variables for common colors used throughout our website */
+
+:root {
+  --primary: lightgreen;
+  --secondary: darkgreen;
+  --dark: black;
+  --light: white;
+}
+
+/* body and fade in animation */
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  animation: fadeIn ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+  0% { 
+      opacity: 0; 
+    } 
+  100% { 
+      opacity: 1; 
+  }
+}
+
+/* navigation bar properties */
+
+nav {
+  padding: 25px;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #FFFFFF;
+}
+
+
+.topnav a {
+  float: right;
+  display: block;
+  color: #000000;
+  text-align: right;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  padding: 16px 5%;
+  position: static;
+  margin-right:15px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #dffcd3;
+  border-radius: 12px;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #44C40C;
+  border-radius: 12px;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 1175px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1175px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+.logo {
+  position: absolute;
+  left: 15px;
+  top: 25px;
+}
+
+/* banner image and header text */
+
+.background {
+  background-image: url("images/MoneySaversTestBG.png");
+  height: 55%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.heading-text {
+  float: left;
+  text-align: left;
+  font-family: Product-Sans;
+  font-weight: bold;
+  font-size: 5vh;
+  padding-left: 5%;
+  padding-top: 1%;
+  color: white;
+}
+
+/* adjust banner image for smaller displays */
+
+@media(max-width: 1000px){
+  .background {
+  background-image: url("images/MoneySaversMobile.png");
+   }
+}
+
+button {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  position: relative;
+  background-color: #000000;
+  float: left;
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 25px;
+}
+
+/* Interactive styling */
+
+/*Background + borders*/
+.border_space1{
+  display: block;
+  background: whitesmoke;
+  float: center;
+  font-size: 5vh;
+  padding: 2%;
+  color: black;
+}
+.money_video{
+  display: block;
+  float: center;
+
+}
+
+/* card styling */
+
+.card {
+  margin: 100px auto 0;
+  width: 30vw;
+  min-width: 350px;
+  height: 55vh;
+  float: center;
+  perspective: 1000px;
+  border-radius:1;
+  position: relative;
+  display: block
+}
+
+.card__inner {
+  width: 100%;
+  height: 75%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+}
+
+.card__inner.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card__face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+}
+
+.card__face--front {
+  background: rgb(104, 182, 27);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__face--front h2 {
+  color: #fff;
+  font-size: 32px;
+}
+
+.card__face--back {
+  background-color: var(--light);
+  transform: rotateY(180deg);
+  font-size: 2vh;
+}
+
+.card__content {
+  width: 100%;
+  height: 100%;
+}
+
+.card__header {
+  position: relative;
+  padding: 30px 30px 40px;
+  color: white
+}
+
+.card__header:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(to bottom right,green, rgb(87, 107, 51));
+  z-index: -1;
+  border-radius: 0px 0px 50% 0px;
+}
+
+.budgeting {
+  margin: 100px auto 0;
+  width: 30vw;
+  height: 50vh;
+  min-width: 350px;
+  position: relative;
+  display: block;
+  float: center;
+  perspective: 1000px;
+  border-radius: 100%;
+}
+
+.budget-symbol {
+  display: block;
+  text-align: center;
+}
+
+.budgeting__inner {
+  width: 100%;
+  height: 75%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+}
+
+.budgeting__inner.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.budgeting__face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+}
+
+.budgeting__face--front {
+  background: rgb(104, 182, 27);;
+  display: block;
+}
+
+.budgeting__face--front h2 {
+  color: #fff;
+  text-align: center;
+  font-family: Product-Sans;
+  font-size: 5vh;
+}
+
+.budgeting__face--back {
+  background-color: var(--light);
+  padding-left: 15px;
+  padding-right: 10px;
+  font-size: 2.5vh;
+  font-family: Product-Sans;
+  transform: rotateY(180deg);
+}
+
+.discount {
+  margin: 100px auto 0;
+  width: 30vw;
+  height: 50vh;
+  min-width: 350px;
+  position: relative;
+  display: block;
+  float: center;
+  perspective: 1000px;
+  border-radius: 100%;
+}
+
+.discount-symbol {
+  display: block;
+  text-align: center;
+}
+
+.discount__inner {
+  width: 100%;
+  height: 75%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+}
+
+.discount__inner.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.discount__face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+}
+
+.discount__face--front {
+  background: rgb(104, 182, 27);
+  display: block;
+}
+
+.discount__face--front h2 {
+  color: #fff;
+  text-align: center;
+  font-family: Product-Sans;
+  font-size: 5vh;
+}
+
+.discount__face--back {
+  background-color: var(--light);
+  padding-left: 15px;
+  padding-right: 10px;
+  font-size: 2.5vh;
+  font-family: Product-Sans;
+  transform: rotateY(180deg);
+}
+
+/* Typing animation */
+.words {
+  display: flex;
+  color: black;
+  font-size: 1.5vh;
+}
+
+.typing {
+  margin-left: 8px;
+  position: relative;
+  font-size: 2.3vh;
+}
+
+.typing::after {
+  content: '';
+  position: absolute;
+  font-size: 2.5vh;
+  width: 1px;
+  height: 8%;
+  right: -3.5px;
+  border-right: 2px solid black;
+  animation: blink 0.75s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

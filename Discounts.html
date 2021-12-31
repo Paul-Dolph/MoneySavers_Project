@@ -1,0 +1,95 @@
+<!--Name: Discounts.html
+    Purpose: Presenting a discounts page with information to the user for the purpose of the discounts page and using codes. Contains three buttons that link to three different html pages. Also contains a button on the bottom right of the page that when clicked will display a fun fact about couponing.
+    Version and Date: V1, 5/30/2021
+    Author(s): Danielle DeLia
+    Dependencies: No dependencies-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MoneySaver | The simplest budgeting tool</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="Discounts.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" type="image/jpg" href="images/MoneySaversLogo.ico"/>
+  </head>
+<body>
+
+<!-- Navigation Bar below with links to each tab -->
+<nav>
+<div class="logo">
+<a href="index.html"> <img src="images/MoneySaversLogoSmall.png"></a>
+</div>
+<div class="topnav" id="navBar">
+  <a href="https://moneysaversapp.bubbleapps.io/version-test/" target="">Sign in</a>
+  <a href="About.html">About</a>
+  <a href="Budgeting.html">Budgeting</a>
+  <a class="active" href="Discounts.html">Discounts</a>
+  <a href="index.html">Home</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+</nav>
+
+<!-- Popup button when clicked will display interesting fact -->
+<div class="form-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <!-- Header for form button -->
+    <h1>Interesting Fact...</h1>
+    <!-- Text for interesting fact -->
+    <label for="email"><b>Some countries used to have coupons for cars!</b></label>
+  </form>
+</div>
+
+<!-- Text to portray a line in the website -->
+<h1>_______________________________________________________________________________________________________________________________________________________________________________________________</h1>
+
+<!-- Title for the discounts page -->
+<div class="header">
+  <h1>Discounts</h1>
+  <h2>Save Now!</h2>
+  <p>Click a category below to start saving on what you need</p>
+</div>
+
+<!-- Container that centers three buttons which link to different html pages -->
+<div class="container">
+  <div class="center">
+    <a href="restaurants.html"><button>Restaurants</button></a>
+    <a href="groceries.html"><button>Groceries</button></a>
+    <a href="apparel.html"><button>Apparel</button></a>
+  </div>
+</div>
+
+<!-- Container that centers text describing the goal of the discounts page -->
+<div class="box">
+  <div class="center"
+    <p> The goal of the discounts tab is to provide you with unique codes for various restaurants and stores. To begin, click on a category where you want to begin. Once clicked, you will be brought to a page full of different couponing sites. Some sites will give out discount codes to use at various stores in person and online, and other sites might prompt you to become a member and start saving. Taking the time to find coupon codes can save money in the future and ultimately will help you to better budget your money.</p>
+    </div>
+</div>
+
+<!-- Text displayed before button is clicked -->
+<button class="open-button" onclick="openForm()">Fun Fact</button>
+
+<!-- Below script for the navigation bar and open and closing the form for the fun fact -->
+<script>
+function myFunction() {
+  var x = document.getElementById("navBar");
+  if (x.className == "topnav") {
+    x.className += " responsive";
+  } 
+  else {
+    x.className = "topnav";
+  }
+}
+
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+
+</script>

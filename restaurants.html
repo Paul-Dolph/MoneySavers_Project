@@ -1,0 +1,111 @@
+<!--Name: restaurants.html
+    Purpose: Presenting a restaurants tab that provides information on the purpose of the tab and multiple links to various discount site pages tailored towards restaurants.
+    Version and Date: V1, 5/30/2021
+    Author(s): Danielle DeLia
+    Dependencies: No dependencies-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MoneySaver | The simplest budgeting tool</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" type="image/jpg" href="images/MoneySaversLogo.ico"/>
+  </head>
+
+<body>
+
+<!-- Navigation Bar below with links to each tab -->
+<nav>
+<div class="logo">
+<a href="index.html"> <img src="images/MoneySaversLogoSmall.png"></a>
+</div>
+<div class="topnav" id="navBar">
+  <a href="https://moneysaversapp.bubbleapps.io/version-test/">Sign in</a>
+  <a href="About.html">About</a>
+  <a href="Budgeting.html">Budgeting</a>
+  <a class="active" href="Discounts.html">Discounts</a>
+  <a href="#home">Home</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+</nav>
+
+<!-- Style information below -->
+<style>
+  h1 {
+    text-align: center;
+  }
+  p {
+    text-align: center;
+  }
+  .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+</style>
+
+<!-- Title for webpage and image -->
+<h1> <span style="color: #000000"> Restaurants </h1>
+
+<img src="images/food.png" alt="Restaurants" style="width:100px; height:100px;" class="center">
+
+<p>  <span style="color: #000000"> Choose a site below to join a savings program and take advantage of all the benefits!! </p>
+
+<!-- Style information below -->
+<style>
+/* link will be red if unvisited */
+a:link {
+  color: red;
+}
+
+/* link will be green if visited */
+a:visited {
+  color: green;
+}
+
+/* link will be pink if hovered over */
+a:hover {
+  color: hotpink;
+}
+
+/* when link is clicked, it will be blue */
+a:active {
+  color: blue;
+}
+</style>
+
+<!-- Links below to various different discounting sites -->
+<p><b><a href="https://www.retailmenot.com/coupons/food" target="_blank">Retail Me Not</a></b></p>
+<p><b><a href="https://www.rakuten.com/sem2/button.htm?src=googadw-Search&eeid=17879&utm_channel=buttonaff&utm_medium=buttonaff&utm_source=10816477605&utm_campaign=sem-nb&utm_content=c&utm_term=ggl&utm_pub=105317081254&utm_size=kwd-1953297822&mkwid=0001&acct=button&ds_kids=p56405210515&gclid=Cj0KCQiAnKeCBhDPARIsAFDTLTIm3Hu1AlfWOhUE3vIBT87BEzk6NAMddIqQoDHHmNXkzv7IJXAsVrkaAuKwEALw_wcB&gclsrc=aw.ds" target="_blank"> Rakuten </a></b></p>
+<p><b><a href="https://slickdeals.net/extension/landing/ua-extension-lp-vdlpb/?utm_source=googlesem&utm_medium=cpc&utm_term=%2Bcoupons&utm_content=479026482890&sdxt01=b&utm_campaign=ext_slickdeals.net/extension-broad-gsn&gclid=Cj0KCQiAnKeCBhDPARIsAFDTLTKAzzKEnUdiVPiKC06YL-KQhj4UWkjlvdp3NfyzQARE68zKbumZWQoaAooHEALw_wcB" target="_blank">Slick Deals</a></b></p>
+<p><b><a href="https://capitaloneshopping.com/instant?utm_source=Dolphin&utm_campaign=110603542454&utm_term=474224079825&gclid=Cj0KCQiAnKeCBhDPARIsAFDTLTJs631Z0HNFyOWk1lDxT96X6t-aKswk0yqw31p15laW3cBpVxqjAa0aAkHqEALw_wcB" target="_blank">Capital One Shopping</a></b></p>
+<p><b><a href="https://www.savings.com/coupons/restaurant.com" target="_blank">Savings</a></b></p>
+<p><b><a href="https://www.joinhoney.com/coupons/restaurants" target="_blank">Honey</a></b></p>
+<p><b><a href="https://www.offers.com/restaurant/" target="_blank">Offers</a></b></p>
+
+<!--  Text explaining benefits of discounting -->
+<p> Unsure of signing up? Continue reading to discover all the benefits that lie ahead. <br> </p>
+<img src="images/price-tag.png" alt="Tags" style="width:100px; height:100px;" class="center">
+<p> Take advantage of coupon codes!! <br> Choose from one of the following sites listed to get access to hundreds of codes. It is safe, quick and easy to use! </p>
+
+<!-- Script for navigation bar -->
+<script src="main.js"></script>
+<script>
+function myFunction() {
+  var x = document.getElementById("navBar");
+  if (x.className == "topnav") {
+    x.className += " responsive";
+  } 
+  else {
+    x.className = "topnav";
+  }
+}
+</script>
+</body>
+</html>
